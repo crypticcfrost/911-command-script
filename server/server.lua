@@ -33,7 +33,7 @@ AddEventHandler('esx_jobChat:911', function(targetCoords, msg, streetName, emerg
 	local messageFull
 	if emergency == '911' then
 		messageFull = {
-			template = '<div style="padding: 8px; margin: 8px; background-color: rgba(0, 38, 153); border-radius: 25px;"><i class="fas fa-bell"style="font-size:15px"></i> [911] : {0} | Location : {1} | {2}</font></i></b></div>',
+			template = '<div style="padding: 8px; margin: 8px; background-color: rgba(0, 38, 153); border-radius: 25px;"><i class="fas fa-bell"style="font-size:15px"></i> [EMERGENCY!] : {0} | Location : {1} | {2}</font></i></b></div>',
         	args = {fal, streetName, msg}
 		}
 	end

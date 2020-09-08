@@ -27,14 +27,14 @@ end)
 -- [CLIENT SIDED] 911 COMMAND
 
 Citizen.CreateThread(function()
-    TriggerEvent('chat:addSuggestion', '/911', 'Sending a notice to the authorities with 911!', {
+    TriggerEvent('chat:addSuggestion', '/911', 'Send a distress to law enforcement!', {
     { name="Complaint", help="Write your complaint here!" }
 })
 end)
 
 msg = nil
 RegisterCommand('911', function(source, args, rawCommand)
-	TriggerEvent("chatMessage"," [911] " , {26, 83, 255},   "A notice has been sent to the Authorities" )
+	TriggerEvent("chatMessage"," [911] " , {26, 83, 255},   "A notice with your GPS has been sent to the Authorities" )
 		
 	msg = table.concat(args, " ")
 	
@@ -74,7 +74,7 @@ AddEventHandler('esx_jobChat:911EmergencySend', function(messageFull)
 	if PlayerData.job.name == 'police' then
 		SetNotificationTextEntry("STRINGS");
 		AddTextComponentString(normalString);
-		SetNotificationMessage("CHAR_CALL911", "CHAR_CALL911", true, 8, "~y~Notice 911~s~", "GPS location sent");
+		SetNotificationMessage("CHAR_CALL911", "CHAR_CALL911", true, 8, "~y~Alert All Officers!~s~", "A civilian is in distress!");
 		DrawNotification(false, true);
 	end
 end)
